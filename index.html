@@ -10,16 +10,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Link foglio di stile personale -->
+    <link rel="stylesheet" href="css/personal-framework.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="overflow_container">
         <main>
 
             <!-- Barra superiore FIXED -->
             <section class="fixed_bar">
                 <a class="btn btn-lg" href="#">Effettua l'Upgrade</a>
             </section>
+
             <!-- Sezione NAV Laterale -->
             <section class="main_nav">
 
@@ -28,10 +30,124 @@
             <!-- Sezione principale -->
             <section class="main_content">
 
+                <!-- Menù categorie centrale  -->
+                <div class="filter_nav_menu text_center text_uppercase">
+                    <ul>
+                        <li><a href="#">In Evidenza</a></li>
+                        <li><a href="#">Podcast</a></li>
+                        <li><a href="#">Classifiche</a></li>
+                        <li><a href="#">Generi e Mood</a></li>
+                        <li><a href="#">Nuove Uscite</a></li>
+                        <li><a href="#">Scopri</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sezione Recently Played -->
+                <div class="playlist recently_played">
+                    <h1>Recently Played</h1>
+                    <div class="playlist_container">
+                        <div class="playlist_box text_center">
+                            <img src="img/metal_lifting.jpg" alt="Heavy Metal">
+                            <h2>Heavy Metal</h2>
+                            <p>Subtitle</p>
+                        </div>
+                        <div class="playlist_box text_center">
+                            <img src="img/stranger.jpeg" alt="Stranger Things">
+                            <h2>Stranger Things, Vol.1 (a Netflix Original Series Soundtrack)</h2>
+                            <p>Kyle Dixon & Michael Stein</p>
+                        </div>
+                        <div class="playlist_box text_center">
+                            <img src="img/aquietplace.jpeg" alt="A quiet place">
+                            <h2>A quiet place</h2>
+                            <p>Subtitle</p>
+                        </div>
+                        <div class="playlist_box text_center">
+                            <img src="img/split.jpeg" alt="Split">
+                            <h2>Split</h2>
+                            <p>Subtitle</p>
+                        </div>
+                        <div class="playlist_box text_center">
+                            <img src="img/cure.jpeg" alt="A cure for wellness">
+                            <h2>A cure for wellness</h2>
+                            <p>Subtitle</p>
+                        </div>
+                        <div class="playlist_box text_center">
+                            <img src="img/sinister.jpeg" alt="Sinister">
+                            <h2>Sinister</h2>
+                            <p>Subtitle</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sezione Creato per ... -->
+                <div class="playlist created_for">
+                    <h1>Creato per Jhon Doe</h1>
+                    <p>Più ascolti più accurati saranno i suggerimenti</p>
+                    <div class="playlist_container">
+                        <div class="playlist_box text_center">
+                            <img src="img/radar.jpeg" alt="Release Radar">
+                            <h2>Release Radar</h2>
+                        </div>
+                        <div class="playlist_box text_center">
+                            <img src="img/mixdaily.jpeg" alt="Daily Mix">
+                            <h2>Daily Mix 1</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sezione Artisti Popolari -->
+                <div class="playlist popular_artist">
+                    <h1>Artisti più Popolari</h1>
+                    <p>Più ascolti più accurati saranno i suggerimenti</p>
+                    <div class="playlist_container">
+                        <div class="playlist_box text_center">
+                            <img class="circle_img" src="img/youg.jpeg" alt="Lana del Rey">
+                            <h2>Lana del Rey</h2>
+                        </div>
+                        <div class="playlist_box text_center">
+                            <img class="circle_img" src="img/einaudi.jpeg" alt="Ludovico Einaudi">
+                            <h2>Ludovico Einaudi</h2>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
         <footer>
 
+            <!-- Sezione con Nome Brano (sx) -->
+            <div class="track_name">
+                <div class="track_img">
+                    <img src="img/sinister.jpeg" alt="Sinister">
+                </div>
+                <div class="track_info">
+                    <h6>Sinister</h6>
+                    <p>Brano nome</p>
+                </div>
+                <div class="track_icons">
+                    <a href="#"><i class="far fa-heart"></i></a>
+                    <a href="#"><i class="far fa-folder"></i></a>
+                </div>
+            </div>
+
+            <!-- Sezione con Controlli Audio Traccia (center) -->
+            <div class="main_control text_center">
+                <div class="track_controls">
+                    <a href="#"><i class="fas fa-random"></i></a>
+                    <a href="#"><i class="fas fa-step-backward"></i></a>
+                    <a href="#"><i class="fas fa-play"></i></a>
+                    <a href="#"><i class="fas fa-step-forward"></i></a>
+                    <a href="#"><i class="fas fa-redo-alt"></i></a>
+                </div>
+                <div class="track_bar">
+                    <div class="white_bar"></div>
+                    <div class="gray_bar"></div>
+                </div>
+            </div>
+
+            <!-- Sezione con Controlli Secondari (dx) -->
+            <div class="view_control">
+
+            </div>
         </footer>
     </div>
 </body>
