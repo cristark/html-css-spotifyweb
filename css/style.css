@@ -180,51 +180,83 @@ footer {
 .main_control {
   width: 250px;
   height: 100%;
-  border: 1px dotted white;
   flex-grow: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: space-around;
+  align-content: flex-start;
 }
 
 .track_controls {
   width: 100%;
+  margin: 10px 0 15px;
 }
 
-.track_bar {
-  width: 400px;
+.track_controls i {
+  font-size: 1em;
+  margin: 0 12px;
+}
+
+.track_controls :nth-child(3) i {
+  padding: 6px 6px 6px 9px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.main_control .track_bar {
+  width: 450px;
   height: 4px;
-  border-radius: 5px;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
-.track_bar::before {
+.main_control .track_bar::before {
   content: "00:25";
-  vertical-align: middle;
-  font-size: 0.5em;
+  font-size: 0.6em;
   font-weight: 600;
-  margin-left: 20px;
+  position: absolute;
+  bottom: -5px;
+  left: -60px;
+}
+
+.main_control .track_bar::after {
+  content: "04:35";
+  font-size: 0.6em;
+  font-weight: 600;
+  position: absolute;
+  bottom: -5px;
+  right: -60px;
 }
 
 .white_bar {
-  width: 50%;
+  width: 30%;
   height: 100%;
   background-color: white;
   border-radius: 5px;
 }
 
 .gray_bar {
-  width: 50%;
+  width: 70%;
   height: 100%;
   background-color: gray;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
 }
 
 /* - - VIEW CONTROL - - */
 .view_control {
-  width: 250px;
+  width: 300px;
   height: 100%;
-  border: 1px dotted white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.view_control .track_bar {
+  width: 150px;
+  height: 4px;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
