@@ -47,7 +47,99 @@ main {
 .main_nav {
   width: 250px;
   height: 100vh;
-  background-color: #000000;
+  background-color: black;
+  padding: 20px 20px 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* LOGO SECTION */
+.main_nav .logo_section .logo_big {
+  width: 70%;
+}
+
+/* CONTROLLI PRINCIPALI */
+.main_nav .control_row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.main_nav .control_section img {
+  width: 15%;
+  margin-right: 10px;
+  opacity: 0.5;
+}
+
+.main_nav .control_section p {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: gray;
+}
+
+/* PLAYLIST CREATE */
+.main_nav .playlist_create h5 {
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.main_nav .playlist_create .create i {
+  color: black;
+  padding: 10px;
+  background-color: gray;
+  margin-right: 10px;
+}
+
+.main_nav .playlist_create .create p {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: gray;
+}
+
+/* PLAYLIST LIST */
+.main_nav .playlist_list {
+  min-height: 25%;
+  padding: 10px 0;
+  overflow: auto;
+}
+
+.main_nav .playlist_list p {
+  margin-bottom: 20px;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: gray;
+}
+
+/* USER SECTION */
+.user_section .app_install i {
+  font-size: 0.5em;
+  border: 1px solid gray;
+  border-radius: 50%;
+  padding: 5px;
+  color: gray;
+  margin-right: 15px;
+}
+
+.user_section .app_install p {
+  font-size: 0.9em;
+  color: gray;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.user_section .user_name {
+  margin-top: 10px;
+}
+
+.user_section .user_name img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.user_section .user_name p {
+  font-weight: 800;
 }
 
 /* Sezione Principale */
@@ -136,6 +228,7 @@ footer {
   height: 90px;
   background-color: #282828;
   display: flex;
+  justify-content: space-between;
 }
 
 /* - - TRACK NAME - - */
@@ -150,6 +243,10 @@ footer {
 .track_img img {
   width: 50px;
   margin-right: 10px;
+}
+
+.track_info {
+  min-width: 65px;
 }
 
 .track_info p {
@@ -178,9 +275,8 @@ footer {
 
 /* - - MAIN CONTROL - - */
 .main_control {
-  width: 250px;
+  width: 650px;
   height: 100%;
-  flex-grow: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -203,15 +299,27 @@ footer {
   border-radius: 50%;
 }
 
-.main_control .track_bar {
-  width: 450px;
-  height: 4px;
+.main_control .container_track_bar {
   display: flex;
-  justify-content: center;
-  position: relative;
+  align-items: center;
+  width: 100%;
 }
 
-.main_control .track_bar::before {
+.main_control .container_track_bar p {
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.main_control .track_bar {
+  width: 75%;
+  height: 4px;
+  margin: 0 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Soluzione non ottimale per responsive */
+/* .main_control .track_bar::before {
   content: "00:25";
   font-size: 0.6em;
   font-weight: 600;
@@ -227,7 +335,7 @@ footer {
   position: absolute;
   bottom: -5px;
   right: -60px;
-}
+} */
 
 .white_bar {
   width: 30%;
@@ -248,9 +356,13 @@ footer {
   width: 300px;
   height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   margin-right: 20px;
+}
+
+.view_control a {
+  margin: 0 10px;
 }
 
 .view_control .track_bar {
@@ -260,3 +372,5 @@ footer {
   justify-content: center;
   position: relative;
 }
+
+/* RESPONSIVE */
