@@ -54,6 +54,10 @@ main {
   justify-content: space-between;
 }
 
+.main_nav_xs {
+  display: none;
+}
+
 /* LOGO SECTION */
 .main_nav .logo_section .logo_big {
   width: 70%;
@@ -142,7 +146,7 @@ main {
   font-weight: 800;
 }
 
-/* Sezione Principale */
+/* - - SEZIONE PRINCIPALE - - */
 .main_content {
   width: calc(100% - 250px);
   padding-top: 90px;
@@ -158,7 +162,7 @@ main {
 
 .main_content h2 {
   font-size: 1em;
-  font-weight: 900;
+  font-weight: 800;
   margin: 10px 0;
 }
 
@@ -366,7 +370,7 @@ footer {
 }
 
 .view_control .track_bar {
-  width: 150px;
+  width: 50%;
   height: 4px;
   display: flex;
   justify-content: center;
@@ -374,3 +378,61 @@ footer {
 }
 
 /* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  /* FIXED BAR */
+  .fixed_bar {
+    width: calc(100% - 45px);
+  }
+
+  /* CONTROLLI PRINCIPALI */
+  .main_nav {
+    display: none;
+  }
+
+  .main_nav_xs {
+    width: 50px;
+    height: 100vh;
+    background-color: black;
+    padding: 10px 10px 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .upper_nav_icons .logo_xs_icon {
+    margin-bottom: 10px;
+  }
+
+  .upper_nav_icons :not(:first-child) {
+    opacity: 0.5;
+  }
+
+  .lower_nav_icons img {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .lower_nav_icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lower_nav_icons i {
+    margin-bottom: 5px;
+    font-size: 0.4em;
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 50%;
+    padding: 5px;
+  }
+
+  /* SEZIONE PRINCIPALE MAIN */
+  .main_content {
+    width: 100%;
+  }
+
+  .main_control .track_bar {
+    margin: 0 5px;
+  }
+}
