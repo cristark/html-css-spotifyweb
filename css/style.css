@@ -1,4 +1,4 @@
-/* - - GENERAL - - */
+/* | GENERAL */
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -6,7 +6,7 @@ body {
   overflow: hidden;
 }
 
-/* - - MAIN - - */
+/* | MAIN  */
 .overflow_container {
   width: 100%;
   height: 100vh;
@@ -14,12 +14,12 @@ body {
 
 main {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 90px);
   position: relative;
   display: flex;
 }
 
-/* - - FIXED BAR - - */
+/* | FIXED BAR */
 .fixed_bar {
   position: fixed;
   top: 0;
@@ -43,7 +43,7 @@ main {
   text-transform: uppercase;
 }
 
-/* Sezione NAV Laterale */
+/* + Sezione NAV Laterale */
 .main_nav {
   width: 250px;
   height: 100vh;
@@ -146,18 +146,17 @@ main {
   font-weight: 800;
 }
 
-/* - - SEZIONE PRINCIPALE - - */
+/* | MAIN - SEZIONE PRINCIPALE */
 .main_content {
   width: calc(100% - 250px);
   padding-top: 90px;
-  margin-bottom: 90px;
   background-color: #141922;
   overflow: auto;
 }
 
-/* Regole generali replicabili su tutta la main_content */
+/* ? Regole generali replicabili su tutta la main_content */
 .main_content img {
-  width: 200px;
+  width: 100%;
 }
 
 .main_content h2 {
@@ -173,14 +172,46 @@ main {
 }
 
 /* Menù centrale filtro Categorie */
+.filter_nav_menu {
+  margin: 10px 0 30px;
+}
+
 .filter_nav_menu ul li {
-  margin: 20px 10px 30px;
+  margin: 10px 20px;
 }
 
 .filter_nav_menu ul li a {
   font-size: 0.8em;
   color: gray;
   font-weight: 700;
+  position: relative;
+}
+
+.filter_nav_menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 50%;
+  transform: translate(50%, 50%);
+  width: 40px;
+  height: 2px;
+  background-color: #1db954;
+  border-radius: 1px;
+}
+
+.filter_nav_menu ul li a:hover + .filter_nav_menu ul li a::after {
+  animation: lowerBarMove 0.5s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes lowerBarMove {
+  from {
+    background-color: #1db954;
+  }
+
+  to {
+    background-color: white;
+  }
 }
 
 /* Sezione RECENTLY PLAYED */
@@ -201,8 +232,9 @@ main {
 }
 
 .playlist_box {
-  margin-right: 20px;
   width: 200px;
+  margin-right: 20px;
+  margin-bottom: 30px;
 }
 
 /* CREATED FOR */
@@ -223,7 +255,7 @@ main {
   margin-bottom: 30px;
 }
 
-/* - - FOOTER - - */
+/* | FOOTER */
 footer {
   position: fixed;
   bottom: 0;
@@ -235,7 +267,7 @@ footer {
   justify-content: space-between;
 }
 
-/* - - TRACK NAME - - */
+/* + TRACK NAME */
 .track_name_xs {
   display: none;
 }
@@ -254,7 +286,6 @@ footer {
   margin-right: 10px;
 }
 
-/* RICONTROLLARE */
 .track_info h6 {
   font-size: 0.7em;
   font-weight: 800;
@@ -278,7 +309,7 @@ footer {
   margin: 0 5px;
 }
 
-/* - - MAIN CONTROL - - */
+/*  + MAIN CONTROL */
 .main_control {
   max-width: 650px;
   height: 100%;
@@ -326,25 +357,6 @@ footer {
   justify-content: center;
 }
 
-/* Soluzione non ottimale per responsive */
-/* .main_control .track_bar::before {
-  content: "00:25";
-  font-size: 0.6em;
-  font-weight: 600;
-  position: absolute;
-  bottom: -5px;
-  left: -60px;
-}
-
-.main_control .track_bar::after {
-  content: "04:35";
-  font-size: 0.6em;
-  font-weight: 600;
-  position: absolute;
-  bottom: -5px;
-  right: -60px;
-} */
-
 .white_bar {
   width: 30%;
   height: 100%;
@@ -359,7 +371,7 @@ footer {
   border-radius: 0 5px 5px 0;
 }
 
-/* - - VIEW CONTROL - - */
+/* + VIEW CONTROL */
 .view_control_xs {
   display: none;
 }
@@ -387,8 +399,12 @@ footer {
   position: relative;
 }
 
-/* RESPONSIVE 970PX*/
+/* - RESPONSIVE 970PX */
 @media screen and (max-width: 970px) {
+  .playlist_box {
+    width: calc(100% / 3 - 20px);
+  }
+
   .view_control {
     flex-wrap: wrap;
     align-content: space-around;
@@ -404,7 +420,7 @@ footer {
   }
 }
 
-/* RESPONSIVE 768PX*/
+/* - RESPONSIVE 768PX */
 @media screen and (max-width: 768px) {
   /* FIXED BAR */
   .fixed_bar {
@@ -455,9 +471,16 @@ footer {
   }
 
   /* SEZIONE PRINCIPALE MAIN */
+  main {
+    height: calc(100% - 90px);
+  }
+
   .main_content {
     width: 100%;
-    margin-bottom: 120px;
+  }
+
+  .filter_nav_menu ul li {
+    margin: 10px 10px;
   }
 
   /* FOOTER */
@@ -515,11 +538,16 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #b001c7d3;
   }
 }
 
-/* RESPONSIVE 500PX*/
+/* - RESPONSIVE 500PX */
 @media screen and (max-width: 500px) {
+  .playlist_box {
+    width: calc(100% / 2 - 20px);
+  }
+
   /* Track Name */
   .track_name_xs {
     width: 100%;
