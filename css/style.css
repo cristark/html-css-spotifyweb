@@ -41,6 +41,14 @@ main {
   border: 1px solid white;
   border-radius: 30px;
   text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.fixed_bar a:hover {
+  transform: scale(1.1);
+  font-size: 0.8em;
+  padding: 10px 25px;
+  color: #1db954;
 }
 
 /* + Sezione NAV Laterale */
@@ -187,31 +195,49 @@ main {
   position: relative;
 }
 
+/* ? Animazione barra verde sotto elementi */
 .filter_nav_menu ul li a::after {
   content: "";
   position: absolute;
   bottom: -5px;
   right: 50%;
   transform: translate(50%, 50%);
-  width: 40px;
+  width: 0;
   height: 2px;
   background-color: #1db954;
   border-radius: 1px;
 }
 
-.filter_nav_menu ul li a:hover + .filter_nav_menu ul li a::after {
-  animation: lowerBarMove 0.5s linear;
+.filter_nav_menu ul li a:hover {
+  color: white;
+}
+
+.filter_nav_menu ul li a:hover::after {
+  animation: lowerBarMove 0.5s ease-out;
   animation-fill-mode: forwards;
 }
 
 @keyframes lowerBarMove {
-  from {
-    background-color: #1db954;
+  0% {
+    width: 0;
   }
 
-  to {
-    background-color: white;
+  50% {
+    width: 50px;
   }
+
+  100% {
+    width: 40px;
+  }
+}
+
+/* ? Focus su elemento cliccato */
+.filter_nav_menu ul li a:focus {
+  color: white;
+}
+
+.filter_nav_menu ul li a:focus::after {
+  width: 40px;
 }
 
 /* Sezione RECENTLY PLAYED */
@@ -235,6 +261,62 @@ main {
   width: 200px;
   margin-right: 20px;
   margin-bottom: 30px;
+}
+
+.playlist_box .img_box {
+  position: relative;
+  cursor: pointer;
+}
+
+.playlist_box .img_box i {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  font-size: 1.5em;
+  padding: 20px;
+  background-color: #1db954;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: playButtonDown 0.3s linear;
+  animation-fill-mode: forwards;
+}
+
+.img_box:hover i {
+  animation: playButtonUp 0.3s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes playButtonUp {
+  0% {
+    opacity: 0;
+    bottom: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+    bottom: 20px;
+  }
+}
+
+@keyframes playButtonDown {
+  0% {
+    opacity: 1;
+    bottom: 20px;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+    bottom: 0;
+  }
 }
 
 /* CREATED FOR */
