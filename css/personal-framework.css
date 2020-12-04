@@ -37,6 +37,20 @@ a {
   float: left;
 }
 
+/* - - FLEX RULES - - */
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align_center {
+  align-items: center;
+}
 /* - - DEBUG RULES - - */
 .row {
   height: 150px;

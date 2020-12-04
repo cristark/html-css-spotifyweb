@@ -236,12 +236,17 @@ footer {
 }
 
 /* - - TRACK NAME - - */
+.track_name_xs {
+  display: none;
+}
+
 .track_name {
-  width: 250px;
+  min-width: 250px;
   height: 100%;
   display: flex;
+  padding-left: 10px;
   align-items: center;
-  padding: 0 10px;
+  justify-content: space-around;
 }
 
 .track_img img {
@@ -249,8 +254,10 @@ footer {
   margin-right: 10px;
 }
 
-.track_info {
-  min-width: 65px;
+/* RICONTROLLARE */
+.track_info h6 {
+  font-size: 0.7em;
+  font-weight: 800;
 }
 
 .track_info p {
@@ -259,17 +266,11 @@ footer {
   color: gray;
 }
 
-.track_info h6 {
-  font-size: 0.7em;
-  font-weight: 800;
-}
-
 .track_icons {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-left: 50px;
 }
 
 .track_icons i {
@@ -279,12 +280,13 @@ footer {
 
 /* - - MAIN CONTROL - - */
 .main_control {
-  width: 650px;
+  max-width: 650px;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
+  flex-grow: 1;
 }
 
 .track_controls {
@@ -304,9 +306,11 @@ footer {
 }
 
 .main_control .container_track_bar {
+  width: 100%;
   display: flex;
   align-items: center;
-  width: 100%;
+  justify-content: center;
+  padding: 0 20px;
 }
 
 .main_control .container_track_bar p {
@@ -356,8 +360,12 @@ footer {
 }
 
 /* - - VIEW CONTROL - - */
+.view_control_xs {
+  display: none;
+}
+
 .view_control {
-  width: 300px;
+  width: 15%;
   height: 100%;
   display: flex;
   justify-content: flex-end;
@@ -365,11 +373,13 @@ footer {
   margin-right: 20px;
 }
 
-.view_control a {
-  margin: 0 10px;
+.view_control a,
+.view_control_xs a {
+  margin-right: 10px;
 }
 
-.view_control .track_bar {
+.view_control .track_bar,
+.view_control_xs .track_bar {
   width: 50%;
   height: 4px;
   display: flex;
@@ -377,7 +387,24 @@ footer {
   position: relative;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE 970PX*/
+@media screen and (max-width: 970px) {
+  .view_control {
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+  }
+
+  .view_control a {
+    margin: 0 5px;
+  }
+
+  .view_control .track_bar {
+    margin-bottom: 10px;
+  }
+}
+
+/* RESPONSIVE 768PX*/
 @media screen and (max-width: 768px) {
   /* FIXED BAR */
   .fixed_bar {
@@ -393,7 +420,7 @@ footer {
     width: 50px;
     height: 100vh;
     background-color: black;
-    padding: 10px 10px 90px;
+    padding: 10px 10px 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -430,9 +457,80 @@ footer {
   /* SEZIONE PRINCIPALE MAIN */
   .main_content {
     width: 100%;
+    margin-bottom: 120px;
+  }
+
+  /* FOOTER */
+  footer {
+    height: 120px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Track Name */
+  .track_name {
+    display: none;
+  }
+
+  .track_name_xs {
+    width: 50%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .track_name_xs .track_info h6 {
+    font-size: 0.9em;
+    margin-right: 5px;
+  }
+
+  .track_name_xs .track_info p {
+    font-size: 0.8em;
+  }
+
+  .track_name_xs .track_icons {
+    margin-left: 0;
+  }
+
+  /* Main Control */
+  .main_control {
+    max-width: 100%;
+    height: 90px;
+    order: 1;
   }
 
   .main_control .track_bar {
-    margin: 0 5px;
+    margin: 0 20px;
+  }
+
+  /* View Control */
+  .view_control {
+    display: none;
+  }
+
+  .view_control_xs {
+    width: 50%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* RESPONSIVE 500PX*/
+@media screen and (max-width: 500px) {
+  /* Track Name */
+  .track_name_xs {
+    width: 100%;
+  }
+
+  /* View Control */
+  .view_control {
+    display: none;
+  }
+
+  .view_control_xs {
+    display: none;
   }
 }
