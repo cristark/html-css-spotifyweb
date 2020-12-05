@@ -41,14 +41,13 @@ main {
   border: 1px solid white;
   border-radius: 30px;
   text-transform: uppercase;
-  transition: all 0.2s;
+  transition: all 0.2s linear;
 }
 
 .fixed_bar a:hover {
   transform: scale(1.1);
   font-size: 0.8em;
   padding: 10px 25px;
-  color: #1db954;
 }
 
 /* + Sezione NAV Laterale */
@@ -62,11 +61,19 @@ main {
   justify-content: space-between;
 }
 
+.main_nav a p:hover {
+  color: white;
+}
+
 .main_nav_xs {
   display: none;
 }
 
 /* LOGO SECTION */
+.main_nav .logo_section {
+  margin-bottom: 20px;
+}
+
 .main_nav .logo_section .logo_big {
   width: 70%;
 }
@@ -76,18 +83,23 @@ main {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.2s linear;
+}
+
+.main_nav .control_row:hover {
+  opacity: 1;
 }
 
 .main_nav .control_section img {
   width: 15%;
   margin-right: 10px;
-  opacity: 0.5;
 }
 
 .main_nav .control_section p {
   font-size: 0.8em;
   font-weight: 600;
-  color: gray;
 }
 
 /* PLAYLIST CREATE */
@@ -102,6 +114,24 @@ main {
   padding: 10px;
   background-color: gray;
   margin-right: 10px;
+  transition: all 0.2s linear;
+}
+
+.main_nav .playlist_create .create {
+  cursor: pointer;
+}
+
+.main_nav .playlist_create .create p {
+  transition: all 0.2s linear;
+}
+
+.main_nav .playlist_create .create:hover p {
+  color: white;
+}
+
+.main_nav .playlist_create .create:hover i {
+  background-color: white;
+  border-radius: 5px;
 }
 
 .main_nav .playlist_create .create p {
@@ -130,7 +160,6 @@ main {
   border: 1px solid gray;
   border-radius: 50%;
   padding: 5px;
-  color: gray;
   margin-right: 15px;
 }
 
@@ -142,6 +171,10 @@ main {
 }
 
 .user_section .user_name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
   margin-top: 10px;
 }
 
