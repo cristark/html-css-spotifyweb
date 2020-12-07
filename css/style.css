@@ -50,7 +50,7 @@ main {
   padding: 10px 25px;
 }
 
-/* + Sezione NAV Laterale */
+/* | Sezione NAV Laterale */
 .main_nav {
   width: 250px;
   height: 100vh;
@@ -90,6 +90,22 @@ main {
 
 .main_nav .control_row:hover {
   opacity: 1;
+}
+
+.main_nav .control_row.active {
+  opacity: 1;
+  position: relative;
+}
+
+.main_nav .control_row.active::before {
+  content: "";
+  width: 4px;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  left: -20px;
+  background-color: #1db954;
+  border-radius: 1px;
 }
 
 .main_nav .control_section img {
@@ -157,7 +173,7 @@ main {
 /* USER SECTION */
 .user_section .app_install i {
   font-size: 0.5em;
-  border: 1px solid gray;
+  border: 1px solid white;
   border-radius: 50%;
   padding: 5px;
   margin-right: 15px;
@@ -165,7 +181,7 @@ main {
 
 .user_section .app_install p {
   font-size: 0.9em;
-  color: gray;
+  color: white;
   font-weight: 600;
   margin-top: 2px;
 }
@@ -204,12 +220,22 @@ main {
   font-size: 1em;
   font-weight: 800;
   margin: 10px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  overflow: hidden;
 }
 
 .main_content p {
   font-size: 0.8em;
   font-weight: 600;
   color: gray;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  overflow: hidden;
 }
 
 /* Menù centrale filtro Categorie */
@@ -241,8 +267,20 @@ main {
   border-radius: 1px;
 }
 
+.filter_nav_menu ul li a.active {
+  color: white;
+}
+
+.filter_nav_menu ul li a.active::after {
+  width: 40px;
+}
+
 .filter_nav_menu ul li a:hover {
   color: white;
+}
+
+.filter_nav_menu ul li a.active:hover::after {
+  animation: none;
 }
 
 .filter_nav_menu ul li a:hover::after {
@@ -262,15 +300,6 @@ main {
   100% {
     width: 40px;
   }
-}
-
-/* ? Focus su elemento cliccato */
-.filter_nav_menu ul li a:focus {
-  color: white;
-}
-
-.filter_nav_menu ul li a:focus::after {
-  width: 40px;
 }
 
 /* Sezione RECENTLY PLAYED */
@@ -412,6 +441,10 @@ footer {
   color: gray;
 }
 
+.track_info p:hover {
+  color: white;
+}
+
 .track_icons {
   display: flex;
   align-items: center;
@@ -422,6 +455,10 @@ footer {
 .track_icons i {
   color: gray;
   margin: 0 5px;
+}
+
+.track_icons i:hover {
+  color: white;
 }
 
 /*  + MAIN CONTROL */
@@ -437,7 +474,11 @@ footer {
 
 .track_controls {
   width: 100%;
-  margin: 10px 0 15px;
+  height: 50px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .track_controls i {
@@ -449,6 +490,16 @@ footer {
   padding: 6px 6px 6px 9px;
   border: 3px solid white;
   border-radius: 50%;
+  transition: all 0.2s linear;
+}
+
+.track_controls :nth-child(3) i:hover {
+  padding: 8px 8px 8px 11px;
+  font-size: 1.2em;
+}
+
+.track_controls :nth-child(3) {
+  width: 65px;
 }
 
 .main_control .container_track_bar {
@@ -470,6 +521,7 @@ footer {
   margin: 0 40px;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
 .white_bar {
@@ -477,6 +529,7 @@ footer {
   height: 100%;
   background-color: white;
   border-radius: 5px;
+  position: relative;
 }
 
 .gray_bar {
@@ -484,6 +537,22 @@ footer {
   height: 100%;
   background-color: gray;
   border-radius: 0 5px 5px 0;
+}
+
+.main_control .track_bar:hover .white_bar {
+  background-color: #1db954;
+}
+
+.main_control .track_bar:hover .white_bar::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  right: 0;
+  transform: translate(50%, -50%);
 }
 
 /* + VIEW CONTROL */
@@ -512,6 +581,32 @@ footer {
   display: flex;
   justify-content: center;
   position: relative;
+  cursor: pointer;
+}
+
+.view_control .track_bar:hover .white_bar,
+.view_control_xs .track_bar:hover .white_bar {
+  background-color: #1db954;
+}
+
+.view_control .track_bar:hover .white_bar::after,
+.view_control_xs .track_bar:hover .white_bar::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+/* - RESPONSIVE HEIGHT 350PX */
+@media screen and (max-height: 350px) {
+  .main_nav_xs .lower_nav_icons {
+    display: none;
+  }
 }
 
 /* - RESPONSIVE 970PX */
@@ -563,6 +658,10 @@ footer {
 
   .upper_nav_icons :not(:first-child) {
     opacity: 0.5;
+  }
+
+  .upper_nav_icons :nth-child(2) {
+    opacity: 1;
   }
 
   .lower_nav_icons img {
@@ -618,13 +717,17 @@ footer {
     justify-content: space-around;
   }
 
+  .track_name_xs .track_info {
+    margin-left: 5px;
+  }
+
   .track_name_xs .track_info h6 {
-    font-size: 0.9em;
+    font-size: 0.7em;
     margin-right: 5px;
   }
 
   .track_name_xs .track_info p {
-    font-size: 0.8em;
+    font-size: 0.6em;
   }
 
   .track_name_xs .track_icons {
@@ -660,12 +763,21 @@ footer {
 /* - RESPONSIVE 500PX */
 @media screen and (max-width: 500px) {
   .playlist_box {
-    width: calc(100% / 2 - 19px);
+    width: calc(100% / 2 - 20px);
   }
 
   /* Track Name */
   .track_name_xs {
     width: 100%;
+  }
+
+  .track_name_xs .track_info h6 {
+    font-size: 0.9em;
+    margin-right: 5px;
+  }
+
+  .track_name_xs .track_info p {
+    font-size: 0.8em;
   }
 
   /* View Control */
