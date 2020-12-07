@@ -660,7 +660,7 @@ footer {
 /* - RESPONSIVE 500PX */
 @media screen and (max-width: 500px) {
   .playlist_box {
-    width: calc(100% / 2 - 20px);
+    width: calc(100% / 2 - 19px);
   }
 
   /* Track Name */
