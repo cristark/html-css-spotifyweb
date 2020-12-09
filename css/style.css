@@ -603,9 +603,17 @@ footer {
 }
 
 /* - RESPONSIVE HEIGHT 350PX */
-@media screen and (max-height: 350px) {
+@media screen and (max-height: 350px) and (max-width: 768px) {
   .main_nav_xs .lower_nav_icons {
     display: none;
+  }
+
+  .fixed_bar {
+    display: none;
+  }
+
+  .main_content {
+    padding-top: 10px;
   }
 }
 
